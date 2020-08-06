@@ -3,6 +3,8 @@ package jm.task.core.jdbc.model;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 
 @Table
 public class User {
@@ -26,6 +28,14 @@ public class User {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "id = " + id + ", \n"
+                + "name = " + name + ", \n"
+                + "lastname = " + lastName + ", \n"
+                + "age = " + age;
     }
 
     public Long getId() {
