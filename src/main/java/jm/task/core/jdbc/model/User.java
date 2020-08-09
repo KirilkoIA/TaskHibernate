@@ -28,6 +28,7 @@ public class User {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
+        setId((long) age);
     }
 
     @Override

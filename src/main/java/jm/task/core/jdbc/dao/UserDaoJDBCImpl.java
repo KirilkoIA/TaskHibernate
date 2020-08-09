@@ -3,15 +3,11 @@ package jm.task.core.jdbc.dao;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
-    private long idUser = 1;
 
     private Util util = new Util();
 
@@ -21,7 +17,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void createUsersTable() {
         try {
-            util.getConnection().execute("CREATE table IF NOT EXISTS users(id int auto_increment primary key,\n" +
+            util.getConnection().execute("CREATE table IF NOT EXISTS users(id int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY ,\n" +
                     "nameUser varchar(30),\n" +
                     "lastName varchar(30),\n" +
                     "age int(120));");
@@ -42,7 +38,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void saveUser(String name, String lastName, byte age) {
         try {
-            util.getConnection().execute("INSERT INTO users SET id = '" + idUser++ + "', nameUser = '" + name + "', lastName = '" + lastName + "', age = '" + age + "'");
+            util.getConnection().execute("INSERT INTO users SET nameUser = '" + name + "', lastName = '" + lastName + "', age = '" + age + "'");
 
             System.out.println("User c именем - " + name + " добавлен в базу данных");
         }
