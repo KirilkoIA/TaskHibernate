@@ -22,6 +22,7 @@
 
     <dependencies>
 <!--         Ваши зависимости-->
+
          <!-- https://mvnrepository.com/artifact/junit/junit -->
          <dependency>
              <groupId>junit</groupId>
@@ -47,6 +48,27 @@
             <artifactId>hibernate-core</artifactId>
             <version>4.3.10.Final</version>
         </dependency>
-     </dependencies>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.3.10.Final</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml/classmate -->
+        <dependency>
+            <groupId>com.fasterxml</groupId>
+            <artifactId>classmate</artifactId>
+            <version>0.8.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+
+    </dependencies>
 
 </project>
